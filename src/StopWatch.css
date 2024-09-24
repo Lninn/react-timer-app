@@ -1,0 +1,19 @@
+.form, .form input {
+  font-size: 36px;
+}
+
+.form {
+  margin-bottom: 16px;
+}
+
+.stop-icon {
+  font-size: 54px;
+  cursor: pointer;
+}
+
+.content-area {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 16px;
+}

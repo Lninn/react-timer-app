@@ -1,9 +1,11 @@
+import './index.css'
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './components/Root'
 import Timer from './Timer'
-import './index.css'
+import StopWatch from './StopWatch'
 import { AppProvider } from './AppContext';
 
 const router = createBrowserRouter([
@@ -12,9 +14,13 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: '/a',
+        path: '/timer',
         element: <Timer />
       },
+      {
+        path: '/stop-watch',
+        element: <StopWatch />
+      }
     ]
   },
 ]);

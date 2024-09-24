@@ -1,18 +1,25 @@
 import './Root.css'
 
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { TypcnFlowSwitch } from './TypcnFlowSwitch'
-import { useApp } from '../AppContext'
 
 export default function Root() {
-  const { toggleSettingOpen } = useApp()
+  const { pathname } = useLocation()
+  const navigate = useNavigate();
+
+  function toggleApp() {
+    const newPathname = pathname === '/timer' ? '/stop-watch' : '/timer'
+    navigate(newPathname)
+  }
+
+  const title = pathname === '/timer' ? '秒表' : '定时器'
 
   return (
     <div>
       <header className='header'>
-        <h2>计时器</h2>
+        <h2>{title}</h2>
         <nav className='nav'>
-          <TypcnFlowSwitch onClick={() => toggleSettingOpen(true)} />
+          <TypcnFlowSwitch onClick={toggleApp} />
         </nav>
       </header>
       <main className='main-content'>

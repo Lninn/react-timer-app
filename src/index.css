@@ -87,3 +87,9 @@ button:focus-visible {
   padding: 2rem;
   text-align: center;
 }
+
+.time {
+  font-size: 8rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
