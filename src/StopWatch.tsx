@@ -40,7 +40,7 @@ export default function StopWatch() {
       setMilliseconds(i)
     }
 
-    timerIdRef.current = setInterval(h, 100)
+    timerIdRef.current = setInterval(h, 1000)
     
   }
   

@@ -44,7 +44,7 @@ export default function Timer() {
       
       setMilliseconds(i)
     }
-    timerIdRef.current = setInterval(h, 100)
+    timerIdRef.current = setInterval(h, 1000)
   }
 
   const currentTime = format(milliseconds, 'mm:ss')
@@ -57,7 +57,9 @@ export default function Timer() {
         <button onClick={onStart}>
           {running ? '结束' : '开始'}
         </button>
-        <button onClick={onPause} disabled={!running} >暂停</button>
+        <button onClick={onPause} disabled={!running} >
+          {inPause ? '继续' : '暂停'}
+        </button>
       </div>
     </div>
   )
