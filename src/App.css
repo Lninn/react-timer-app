@@ -49,3 +49,29 @@
   justify-content: center;
   gap: 16px;
 }
+
+.setting-modal {
+  width: 300px;
+  margin: 0px auto;
+  position: absolute;
+  inset: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.setting-modal .setting-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting-header p {
+  color: #666;
+}
+
+.settting-content {
+  margin-top: 16px;
+}

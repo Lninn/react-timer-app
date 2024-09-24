@@ -2,6 +2,9 @@ import './App.css'
 
 import { useRef, useState } from 'react'
 import { format } from 'date-fns'
+import Modal from 'react-modal';
+import { useApp } from './AppContext';
+import { EmojioneV1CancellationX } from './components/EmojioneV1CancellationX';
 
 function App() {
 
@@ -10,6 +13,8 @@ function App() {
   const [milliseconds, setMilliseconds] = useState(0)
 
   const timerIdRef = useRef(-1)
+
+  const {settingOpen, toggleSettingOpen } = useApp()
 
   function onStart() {
     if (!running) {
@@ -47,6 +52,10 @@ function App() {
     timerIdRef.current = setInterval(h, 100)
   }
 
+  function closeModal() {
+    toggleSettingOpen(false)
+  }
+
   const currentTime = format(milliseconds, 'mm:ss')
 
   return (
@@ -59,6 +68,24 @@ function App() {
         </button>
         <button onClick={onPause} disabled={!running} >暂停</button>
       </div>
+
+      <Modal
+        isOpen={settingOpen}
+        contentLabel="Example Modal"
+        style={{ content: { width: 300, margin: '0 auto' } }}
+        className={'setting-modal'}
+      >
+        <div className='setting-header'>
+          <p>SETTING</p>
+          <EmojioneV1CancellationX onClick={closeModal} />
+        </div>
+        <div className='settting-content'>
+          <label>
+            <span>分钟：</span>
+            <input type='number' defaultValue={10} />
+          </label>
+        </div>
+      </Modal>
     </>
   )
 }
