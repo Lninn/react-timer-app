@@ -1,0 +1,11 @@
+.time {
+  font-size: 8rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.control-bar {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
