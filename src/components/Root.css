@@ -1,4 +1,23 @@
 .header {
+  padding: 16px 24px;
+  
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  background-color: #272343;
+  color: #fffffe;
+}
+
+.nav {
+  margin-left: auto;
+}
+.nav svg {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.main-content {
+  padding: 2.5rem;
+  border-radius: 3px;
+  color: #272343;
+  background-color: #fffffe;
 }
